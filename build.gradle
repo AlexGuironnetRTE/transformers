@@ -1,0 +1,51 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.2.1.RELEASE")
+    }
+}
+
+plugins {
+    id 'com.commercehub.gradle.plugin.avro' version '0.9.0'
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+bootJar {
+    baseName = 'transformers'
+    version =  '0.1.0.SNAPSHOT'
+}
+
+repositories {
+    mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+//TODO Add gradle task to generate tar.gz from bundles in build directory
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+//TODO Specify versions? At least boot version
+//TODO Compile vs Implementation?
+
+dependencies {
+    compile 'org.apache.avro:avro:1.8.1'
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.kafka:spring-kafka')
+    compile('org.projectlombok:lombok')
+    compile name: 'cards-client-data-0.14.1.SNAPSHOT'
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+avro {
+    createSetters = false
+    fieldVisibility = "PRIVATE"
+}

@@ -1,0 +1,17 @@
+server:
+  port: 9000
+
+spring:
+  kafka:
+    consumer:
+      bootstrap-servers: "wn0-lfehdi.2izskeo3vv5erixfjyzgyskg2e.parx.internal.cloudapp.net:6667,wn1-lfehdi.2izskeo3vv5erixfjyzgyskg2e.parx.internal.cloudapp.net:6667,wn2-lfehdi.2izskeo3vv5erixfjyzgyskg2e.parx.internal.cloudapp.net:6667,wn3-lfehdi.2izskeo3vv5erixfjyzgyskg2e.parx.internal.cloudapp.net:6667"
+      group-id: group-id
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      #TODO What are the above for?
+    producer:
+      bootstrap-servers: localhost:9092
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
