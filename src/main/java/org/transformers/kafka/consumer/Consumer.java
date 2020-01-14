@@ -1,7 +1,5 @@
 package org.transformers.kafka.consumer;
 
-import io.confluent.developer.User;
-import lombok.extern.apachecommons.CommonsLog;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.lfenergy.operatorfabric.cards.model.Card;
 import org.lfenergy.operatorfabric.cards.model.CardCreationReport;
@@ -11,7 +9,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 import org.transformers.operatorfabric.CardPublisher;
-import org.transformers.utils.Utilities;
 
 //TODO Make logs work (Slf4j)
 
@@ -25,9 +22,7 @@ public class Consumer {
   @Autowired
   CardPublisher cardPublisher;
 
-  String randomGroupId = "opfab_consumer_"+ Utilities.randomAlphaNumeric(10);
-
-  @KafkaListener(topics = "meter-reading-internal-temperature", groupId = "group_id")
+  @KafkaListener(topics = "meter-reading-internal-temperature")
   public void consume(ConsumerRecord<String, MeterReading> record) {
     System.out.println(String.format("Consumed message -> %s", record.value()));
 
