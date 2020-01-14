@@ -7,6 +7,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import org.transformers.opensmartgridplatform.IntervalReading;
 
 import java.time.Instant;
 import java.util.Arrays;
@@ -55,7 +56,10 @@ public class CardPublisher {
 
         card.setState("firstState");
 
-        card.setData(meterReading.getIntervalBlocks().get(0).getIntervalReadings().get(0));
+        //TODO Fix this to avoid burning in hell
+        IntervalReading intervalReading = new IntervalReading(meterReading.getIntervalBlocks().get(0).getIntervalReadings().get(0).getValue(),meterReading.getIntervalBlocks().get(0).getIntervalReadings().get(0).getTimeStamp());
+
+        card.setData(intervalReading);
 
         return card;
     }
