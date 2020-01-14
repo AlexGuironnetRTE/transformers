@@ -58,7 +58,7 @@ public class CardPublisher {
 
         //TODO Fix this to avoid burning in hell
         IntervalReading intervalReading = new IntervalReading(meterReading.getIntervalBlocks().get(0).getIntervalReadings().get(0).getValue(),meterReading.getIntervalBlocks().get(0).getIntervalReadings().get(0).getTimeStamp());
-
+        System.out.println("AGU timestamp "+meterReading.getIntervalBlocks().get(0).getIntervalReadings().get(0).getTimeStamp().toString());
         card.setData(intervalReading);
 
         return card;
