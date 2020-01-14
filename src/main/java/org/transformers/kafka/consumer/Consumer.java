@@ -1,4 +1,4 @@
-package org.transformers;
+package org.transformers.kafka.consumer;
 
 import io.confluent.developer.User;
 import lombok.extern.apachecommons.CommonsLog;

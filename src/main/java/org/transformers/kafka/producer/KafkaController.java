@@ -1,4 +1,4 @@
-package org.transformers;
+package org.transformers.kafka.producer;
 
 import io.confluent.developer.User;
 import org.springframework.beans.factory.annotation.Autowired;
