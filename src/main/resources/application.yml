@@ -6,19 +6,24 @@ server:
   port: 9080
 specific:
   avro:
-    reader: false
+    reader: true
 spring:
   kafka:
     specific:
       avro:
-        reader: false
+        reader: true
     bootstrap-servers:
       - wn0-lfehdi.2izskeo3vv5erixfjyzgyskg2e.parx.internal.cloudapp.net:6667
       - wn1-lfehdi.2izskeo3vv5erixfjyzgyskg2e.parx.internal.cloudapp.net:6667
       - wn2-lfehdi.2izskeo3vv5erixfjyzgyskg2e.parx.internal.cloudapp.net:6667
       - wn3-lfehdi.2izskeo3vv5erixfjyzgyskg2e.parx.internal.cloudapp.net:6667
     properties:
-      schema.registry.url: http://192.168.1.4:8081
+      schema:
+        registry:
+          url: http://192.168.1.4:8081
+      specific:
+        avro:
+          reader: true
     consumer:
       group-id: group_id
       auto-offset-reset: earliest
