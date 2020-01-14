@@ -18,13 +18,13 @@ spring:
       auto-offset-reset: latest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
-      properties:
-        interceptor.classes: io.confluent.monitoring.clients.interceptor.MonitoringConsumerInterceptor
+      #properties:
+        #interceptor.classes: io.confluent.monitoring.clients.interceptor.MonitoringConsumerInterceptor
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
-      properties:
-        interceptor.classes: io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor
+      #properties:
+        #interceptor.classes: io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor
     template:
       default-topic:
 logging:
