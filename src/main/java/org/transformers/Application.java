@@ -14,11 +14,11 @@ public class Application {
 	@Value("${topic.name}")
 	private String topicName;
 
-	@Value("${topic.partitions-num}")
+	/*@Value("${topic.partitions-num}")
 	private Integer partitions;
 
 	@Value("${topic.replication-factor}")
-	private short replicationFactor;
+	private short replicationFactor;*/
 
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
@@ -26,6 +26,6 @@ public class Application {
 
 	@Bean
 	NewTopic moviesTopic() {
-		return new NewTopic(topicName, partitions, replicationFactor);
+		return new NewTopic(topicName, 1, (short) 1);
 	}
 }
