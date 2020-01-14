@@ -1,17 +1,32 @@
+topic:
+  name: users
+  partitions-num: 3
+  replication-factor: 1
 server:
-  port: 9000
-
+  port: 9080
 spring:
   kafka:
+    bootstrap-servers:
+      - wn0-lfehdi.2izskeo3vv5erixfjyzgyskg2e.parx.internal.cloudapp.net:6667
+      - wn1-lfehdi.2izskeo3vv5erixfjyzgyskg2e.parx.internal.cloudapp.net:6667
+      - wn2-lfehdi.2izskeo3vv5erixfjyzgyskg2e.parx.internal.cloudapp.net:6667
+      - wn3-lfehdi.2izskeo3vv5erixfjyzgyskg2e.parx.internal.cloudapp.net:6667
+    properties:
+      schema.registry.url: http://192.168.1.4:8081
     consumer:
-      bootstrap-servers: "wn0-lfehdi.2izskeo3vv5erixfjyzgyskg2e.parx.internal.cloudapp.net:6667,wn1-lfehdi.2izskeo3vv5erixfjyzgyskg2e.parx.internal.cloudapp.net:6667,wn2-lfehdi.2izskeo3vv5erixfjyzgyskg2e.parx.internal.cloudapp.net:6667,wn3-lfehdi.2izskeo3vv5erixfjyzgyskg2e.parx.internal.cloudapp.net:6667"
-      group-id: group-id
-      auto-offset-reset: earliest
+      group-id: group_id
+      auto-offset-reset: latest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      #TODO What are the above for?
+      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+      properties:
+        interceptor.classes: io.confluent.monitoring.clients.interceptor.MonitoringConsumerInterceptor
     producer:
-      bootstrap-servers: localhost:9092
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+      properties:
+        interceptor.classes: io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor
+    template:
+      default-topic:
+logging:
+  level:
+    root: info
