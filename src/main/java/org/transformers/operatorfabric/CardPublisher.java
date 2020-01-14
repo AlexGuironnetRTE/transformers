@@ -43,14 +43,15 @@ public class CardPublisher {
         I18n i18nTitle = new I18n();
         i18nTitle.setKey(process+".title");
         HashMap<String,String> i18nTitleParams = new HashMap<>();
-        i18nTitleParams.put("value",meterReading.getUsagePoint().getMRid());
+        i18nTitleParams.put("transformer_id",meterReading.getUsagePoint().getMRid());
+        i18nTitleParams.put("measurement_type",meterReading.getIntervalBlocks().get(0).getReadingType().getMeasuringKind());
         i18nTitle.setParameters(i18nTitleParams);
         card.setTitle(i18nTitle);
 
         I18n i18nSummary = new I18n();
         i18nSummary.setKey(process+".summary");
         HashMap<String,String> i18nSummaryParams = new HashMap<>();
-        i18nSummaryParams.put("value",meterReading.getIntervalBlocks().get(0).getReadingType().getMeasuringKind()); //TODO Add interval as well
+        i18nSummaryParams.put("measurement_type",meterReading.getIntervalBlocks().get(0).getReadingType().getMeasuringKind()); //TODO Add interval as well
         i18nSummary.setParameters(i18nSummaryParams);
         card.setSummary(i18nSummary);
 

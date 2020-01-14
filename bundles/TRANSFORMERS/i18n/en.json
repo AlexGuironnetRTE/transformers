@@ -1,7 +1,7 @@
 {
   "current_meter_reading":{
-    "title": "Current {{value}}",
-    "summary": "{{value}} measurement",
+    "title": "{{transformer_id}} - {{measurement_type}}",
+    "summary": "Current {{measurement_type}} measurement",
     "firstState": {
       "detail": {
         "tab": {
@@ -14,6 +14,9 @@
     "label": "Hackathon"
   },
   "menu":{
-    "first":"OSGP"
+    "first": "OSGP",
+    "second": "Tennet",
+    "third": "Alliander",
+    "fourth": "RTE"
   }
 }
