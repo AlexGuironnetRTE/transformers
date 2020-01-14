@@ -4,8 +4,14 @@ topic:
 #  replication-factor: 1
 server:
   port: 9080
+specific:
+  avro:
+    reader: false
 spring:
   kafka:
+    specific:
+      avro:
+        reader: false
     bootstrap-servers:
       - wn0-lfehdi.2izskeo3vv5erixfjyzgyskg2e.parx.internal.cloudapp.net:6667
       - wn1-lfehdi.2izskeo3vv5erixfjyzgyskg2e.parx.internal.cloudapp.net:6667
