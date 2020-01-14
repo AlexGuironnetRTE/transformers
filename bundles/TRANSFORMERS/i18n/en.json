@@ -1,0 +1,19 @@
+{
+  "current_meter_reading":{
+    "title": "Current {{value}}",
+    "summary": "{{value}} measurement",
+    "firstState": {
+      "detail": {
+        "tab": {
+          "first": "Table content"
+        }
+      }
+    }
+  },
+  "third":{
+    "label": "Hackathon"
+  },
+  "menu":{
+    "first":"OSGP"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "TRANSFORMERS",
+  "version": "1",
+  "defaultLocale": "en",
+  "templates": [
+    "template1"
+  ],
+  "csses": [
+  ],
+  "menuEntries": [
+    {"id": "uid test 0","url": "https://opensmartgridplatform.org/","label": "menu.first"}
+  ],
+  "i18nLabelKey": "third.label",
+  "processes": {
+    "current_meter_reading": {
+      "states": {
+        "firstState": {
+          "details": [
+            {
+              "title": {
+                "key": "current_meter_reading.firstState.detail.tab.first"
+              },
+              "templateName": "template1"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
