@@ -25,8 +25,10 @@ public class Consumer {
   CardPublisher cardPublisher;
 
   @KafkaListener(topics = "meter-reading-internal-temperature", groupId = "group_id")
-  public void consume(MeterReading meterReading) {
-    System.out.println(String.format("Consumed message -> %s", meterReading));
+  public void consume(ConsumerRecord<String, MeterReading> record) {
+    System.out.println(String.format("Consumed message -> %s", record.value()));
+
+    MeterReading meterReading = record.value();
 
     Card card = cardPublisher.createMeterReadingCard(meterReading);
 
