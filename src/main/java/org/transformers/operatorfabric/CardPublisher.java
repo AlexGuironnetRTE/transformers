@@ -25,6 +25,7 @@ public class CardPublisher {
         card.setProcessId(process+meterReading.getName());
         card.setPublisher("TRANSFORMERS");
         card.setPublisherVersion("1");
+        //TODO Set id ?
 
         //TODO Get dates from the card
         card.setLttd(Instant.now().toEpochMilli());

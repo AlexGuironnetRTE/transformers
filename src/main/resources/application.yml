@@ -4,14 +4,8 @@ topic:
 #  replication-factor: 1
 server:
   port: 9080
-specific:
-  avro:
-    reader: true
 spring:
   kafka:
-    specific:
-      avro:
-        reader: true
     bootstrap-servers:
       - wn0-lfehdi.2izskeo3vv5erixfjyzgyskg2e.parx.internal.cloudapp.net:6667
       - wn1-lfehdi.2izskeo3vv5erixfjyzgyskg2e.parx.internal.cloudapp.net:6667
@@ -26,7 +20,7 @@ spring:
           reader: true
     consumer:
       group-id: group_id
-      auto-offset-reset: earliest
+      auto-offset-reset: latest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
       #properties:
