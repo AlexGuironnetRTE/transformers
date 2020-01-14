@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 import org.transformers.operatorfabric.CardPublisher;
+import org.transformers.utils.Utilities;
 
 //TODO Make logs work (Slf4j)
 
@@ -23,6 +24,8 @@ public class Consumer {
 
   @Autowired
   CardPublisher cardPublisher;
+
+  String randomGroupId = "opfab_consumer_"+ Utilities.randomAlphaNumeric(10);
 
   @KafkaListener(topics = "meter-reading-internal-temperature", groupId = "group_id")
   public void consume(ConsumerRecord<String, MeterReading> record) {
