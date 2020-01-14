@@ -3,7 +3,8 @@
   "version": "1",
   "defaultLocale": "en",
   "templates": [
-    "template1"
+    "template1",
+    "template2"
   ],
   "csses": [
   ],
@@ -24,6 +25,20 @@
                 "key": "current_meter_reading.firstState.detail.tab.first"
               },
               "templateName": "template1"
+            }
+          ]
+        }
+      }
+    },
+    "event_temp_dev": {
+      "states": {
+        "firstState": {
+          "details": [
+            {
+              "title": {
+                "key": "event_temp_dev.firstState.detail.tab.first"
+              },
+              "templateName": "template2"
             }
           ]
         }

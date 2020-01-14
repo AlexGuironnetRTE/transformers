@@ -10,6 +10,17 @@
       }
     }
   },
+  "event_temp_dev":{
+    "title": "Temperature deviation for {{value}}",
+    "summary": "A temperature deviation was detected for {{value}}",
+    "firstState": {
+      "detail": {
+        "tab": {
+          "first": "Info"
+        }
+      }
+    }
+  },
   "third":{
     "label": "Hackathon"
   },
