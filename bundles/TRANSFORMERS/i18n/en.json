@@ -11,9 +11,17 @@
     }
   },
   "event_temp_dev":{
-    "title": "Temperature deviation for {{value}}",
-    "summary": "A temperature deviation was detected for {{value}}",
-    "firstState": {
+    "title": "Temperature report for {{value}}",
+    "summary": "Calculated vs measured temperature for {{value}}",
+    "dev": {
+      "detail": {
+        "tab": {
+          "first": "Report",
+          "second": "Chart"
+        }
+      }
+    },
+    "no_dev": {
       "detail": {
         "tab": {
           "first": "Report",

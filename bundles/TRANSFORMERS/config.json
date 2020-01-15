@@ -5,7 +5,8 @@
   "templates": [
     "template1",
     "template2",
-    "template3"
+    "template3",
+    "template4"
   ],
   "csses": [
   ],
@@ -33,17 +34,33 @@
     },
     "event_temp_dev": {
       "states": {
-        "firstState": {
+        "dev": {
           "details": [
             {
               "title": {
-                "key": "event_temp_dev.firstState.detail.tab.first"
+                "key": "event_temp_dev.dev.detail.tab.first"
               },
               "templateName": "template2"
             },
             {
               "title": {
-                "key": "event_temp_dev.firstState.detail.tab.second"
+                "key": "event_temp_dev.dev.detail.tab.second"
+              },
+              "templateName": "template3"
+            }
+          ]
+        },
+        "no_dev": {
+          "details": [
+            {
+              "title": {
+                "key": "event_temp_dev.no_dev.detail.tab.first"
+              },
+              "templateName": "template4"
+            },
+            {
+              "title": {
+                "key": "event_temp_dev.no_dev.detail.tab.second"
               },
               "templateName": "template3"
             }
