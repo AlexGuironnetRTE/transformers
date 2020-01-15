@@ -1,0 +1,57 @@
+<canvas id="myLineChart" style="display: block; width: 821px; height: 410px;" width="821" height="410" class="chartjs-render-monitor"></canvas>
+
+<script>
+    var ctx = document.getElementById('myLineChart').getContext('2d');
+
+    var myLineChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: [{{card.data.eventTempDevDetailsProcessedData.labels}}],
+            datasets: [{
+                label: "{{card.data.eventTempDevDetailsProcessedData.label.[0]}}",
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                data: [{{card.data.eventTempDevDetailsProcessedData.data.[0]}}],
+                fill: false,
+            }, {
+                label: "{{card.data.eventTempDevDetailsProcessedData.label.[1]}}",
+                fill: false,
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                data: [{{card.data.eventTempDevDetailsProcessedData.data.[1]}}],
+            }]
+        },
+        options: {
+            responsive: true,
+            title: {
+                display: true,
+                text: 'Actual vs Expected Temperature'
+            },
+            tooltips: {
+                mode: 'index',
+                intersect: false,
+            },
+            hover: {
+                mode: 'nearest',
+                intersect: true
+            },
+            scales: {
+                xAxes: [{
+                    display: true,
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Time'
+                    }
+                }],
+                yAxes: [{
+                    display: true,
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Temp (C)'
+                    }
+                }]
+            }
+        }
+    });
+
+</script>

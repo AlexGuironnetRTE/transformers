@@ -16,7 +16,8 @@
     "firstState": {
       "detail": {
         "tab": {
-          "first": "Info"
+          "first": "Info",
+          "second": "Chart"
         }
       }
     }

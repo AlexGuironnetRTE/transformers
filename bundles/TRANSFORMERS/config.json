@@ -4,7 +4,8 @@
   "defaultLocale": "en",
   "templates": [
     "template1",
-    "template2"
+    "template2",
+    "template3"
   ],
   "csses": [
   ],
@@ -39,6 +40,12 @@
                 "key": "event_temp_dev.firstState.detail.tab.first"
               },
               "templateName": "template2"
+            },
+            {
+              "title": {
+                "key": "event_temp_dev.firstState.detail.tab.second"
+              },
+              "templateName": "template3"
             }
           ]
         }
