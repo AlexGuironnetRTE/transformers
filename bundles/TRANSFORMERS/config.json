@@ -11,10 +11,7 @@
   "csses": [
   ],
   "menuEntries": [
-    {"id": "uid test 0","url": "https://opensmartgridplatform.org/","label": "menu.first"},
-    {"id": "uid test 1","url": "https://www.tennet.eu","label": "menu.second"},
-    {"id": "uid test 2","url": "https://www.alliander.com","label": "menu.third"},
-    {"id": "uid test 3","url": "https://www.rte-france.com","label": "menu.fourth"}
+    {"id": "uid test 0","url": "https://192.168.1.22:4200/","label": "menu.first"},
   ],
   "i18nLabelKey": "third.label",
   "processes": {

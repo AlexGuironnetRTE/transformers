@@ -34,9 +34,6 @@
     "label": "Hackathon"
   },
   "menu":{
-    "first": "OSGP",
-    "second": "Tennet",
-    "third": "Alliander",
-    "fourth": "RTE"
+    "first": "Plasma"
   }
 }
